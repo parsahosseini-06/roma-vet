@@ -1,0 +1,11 @@
+# Asset-generation scripts and secrets — never deploy these.
+gen.mjs
+gen2.mjs
+.env
+.env.*
+!.env.example
+
+# Local/dev only
+.DS_Store
+.vercel
+*.log

@@ -1,0 +1,1577 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>کلینیک دامپزشکی روما | چک‌آپ، واکسیناسیون، جراحی، دندانپزشکی و پت‌شاپ</title>
+<meta name="description" content="کلینیک دامپزشکی روما در نیاوران تهران: چک‌آپ و واکسیناسیون، کاشت میکروچیپ، جراحی حیوانات، دندانپزشکی، آرایشگاه سگ و گربه، پت‌شاپ و خدمات خاص. نوبت‌دهی آنلاین و پذیرش اورژانسی." />
+<meta name="theme-color" content="#2E2119" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   1 · TOKENS
+   ============================================================ */
+:root{
+  --cream:#FBF3E7;
+  --sand:#F3E4CF;
+  --peach:#F6C9A6;
+  --coral:#E9835F;
+  --coral-soft:#F2B49A;
+  --mustard:#EFB63F;
+  --mustard-soft:#F7D98C;
+  --mint:#A9C79A;
+  --ink:#2E2119;
+  --ink-2:#4C3A2E;
+  --ink-3:#7A6555;
+  --danger:#C0492F;
+
+  --line:2px;
+  --r-sm:14px; --r-md:20px; --r-lg:28px;
+
+  --sh-1:3px 3px 0 rgba(46,33,25,.92);
+  --sh-2:5px 5px 0 rgba(46,33,25,.92);
+  --sh-3:8px 8px 0 rgba(46,33,25,.92);
+  --sh-soft:0 18px 44px -22px rgba(46,33,25,.55);
+
+  --press:-3px;
+  --pad:clamp(20px,4.5vw,64px);
+  --maxw:1280px;
+  --sec:clamp(56px,7vw,108px);
+  --navh:78px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth;-webkit-tap-highlight-color:rgba(46,33,25,.14)}
+a,button,label,summary,input,select,textarea{touch-action:manipulation}
+body{
+  font-family:'Vazirmatn',system-ui,'Segoe UI',sans-serif;
+  font-weight:500;line-height:1.9;
+  background:var(--cream);color:var(--ink);
+  min-height:100vh;overflow-x:hidden;
+}
+body.lock{overflow:hidden}
+img{display:block;max-width:100%}
+button,input,select,textarea{font:inherit;color:inherit}
+h1,h2,h3,h4{font-weight:900;line-height:1.32;text-wrap:balance}
+p{line-height:2}
+a{color:inherit}
+ul{margin:0;padding:0;list-style:none}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px;border-radius:6px}
+
+.shell{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad)}
+.bgdots{position:relative}
+.bgdots::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(rgba(46,33,25,.9) 1.3px,transparent 1.3px);
+  background-size:28px 28px;opacity:.045;
+}
+section[id]{scroll-margin-top:calc(var(--navh) + 14px)}
+.skip{
+  position:fixed;inset-block-start:-100px;inset-inline-start:16px;z-index:200;
+  background:var(--ink);color:var(--cream);padding:12px 20px;
+  border-radius:0 0 var(--r-sm) var(--r-sm);font-weight:800;text-decoration:none;
+  transition:inset-block-start .2s;
+}
+.skip:focus{inset-block-start:0}
+
+/* ============================================================
+   2 · ICON SPRITE
+   ============================================================ */
+.ico{
+  width:22px;height:22px;flex:0 0 22px;
+  fill:none;stroke:currentColor;stroke-width:1.9;
+  stroke-linecap:round;stroke-linejoin:round;
+}
+.ico-fill{fill:currentColor;stroke:none}
+.sprite{display:none}
+
+/* ============================================================
+   3 · BUTTONS · EYEBROW · TYPE
+   ============================================================ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  font-weight:800;font-size:15px;padding:14px 24px;border-radius:var(--r-sm);
+  border:var(--line) solid var(--ink);cursor:pointer;background:var(--cream);
+  box-shadow:var(--sh-1);text-decoration:none;
+  transition:transform .16s cubic-bezier(.2,.9,.3,1.3),box-shadow .16s,background .18s;
+}
+.btn:hover{transform:translate(var(--press),var(--press));box-shadow:1px 1px 0 rgba(46,33,25,.92)}
+.btn:active{transform:translate(2px,2px);box-shadow:none}
+.btn-primary{background:var(--coral);color:#FFF8F1}
+.btn-primary:hover{background:#D9704C}
+.btn-mustard{background:var(--mustard);color:var(--ink)}
+.btn-mustard:hover{background:var(--mustard-soft)}
+.btn-ink{background:var(--ink);color:var(--cream)}
+.btn-ink:hover{background:#443125}
+.btn-sm{padding:10px 18px;font-size:13.5px}
+.btn-lg{padding:16px 30px;font-size:16px}
+.btn .flip{transform:scaleX(-1)}
+
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;font-weight:900;font-size:12.5px;
+  color:var(--coral);background:var(--sand);
+  border:var(--line) solid var(--ink);border-radius:999px;padding:8px 16px;
+}
+.eyebrow .ico{width:16px;height:16px;flex:0 0 16px}
+.hl{
+  display:inline-block;background:var(--mustard);color:var(--ink);
+  border:var(--line) solid var(--ink);border-radius:var(--r-sm);
+  padding:0 .16em .06em;
+}
+.lede{font-size:clamp(15px,1.25vw,17.5px);color:var(--ink-2);max-width:56ch}
+.lede strong{color:var(--ink);font-weight:800}
+.actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+
+.sechead{display:flex;align-items:flex-end;justify-content:space-between;gap:26px;flex-wrap:wrap;margin-bottom:clamp(26px,3.4vw,44px)}
+.sechead h2{font-size:clamp(1.55rem,3.4vw,2.7rem);max-width:26ch}
+.sechead .lede{max-width:42ch;font-size:15.5px}
+.kicker{
+  display:inline-flex;align-items:center;gap:10px;margin-bottom:16px;
+  font-weight:900;font-size:12px;letter-spacing:.04em;color:var(--ink-3);
+}
+.kicker b{
+  background:var(--ink);color:var(--cream);border-radius:999px;
+  padding:4px 12px;font-weight:900;
+}
+.note{
+  margin-top:24px;font-size:13px;color:var(--ink-3);
+  background:var(--cream);border:var(--line) dashed rgba(46,33,25,.4);
+  border-radius:var(--r-md);padding:13px 19px;display:inline-block;
+}
+.checklist{display:grid;gap:11px;margin-top:22px}
+.checklist li{
+  display:flex;align-items:flex-start;gap:11px;
+  font-size:14.5px;color:var(--ink-2);line-height:1.95;
+}
+.checklist .ico{
+  width:22px;height:22px;flex:0 0 22px;color:var(--coral);
+  background:var(--coral-soft);border-radius:50%;padding:3px;
+  margin-top:5px;stroke-width:3;
+}
+
+/* ============================================================
+   4 · HEADER
+   ============================================================ */
+.nav{
+  position:sticky;top:0;z-index:70;display:flex;align-items:center;gap:22px;
+  padding:14px var(--pad);background:var(--cream);
+  border-bottom:var(--line) solid var(--ink);
+  transition:box-shadow .22s,background .22s;
+}
+.nav.stuck{box-shadow:0 12px 0 -7px rgba(46,33,25,.16)}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink);font-weight:900;font-size:19px;line-height:1.3;min-height:44px}
+.logo-mark{
+  width:42px;height:42px;flex:0 0 42px;background:var(--coral);
+  border:var(--line) solid var(--ink);border-radius:var(--r-sm);
+  display:grid;place-items:center;box-shadow:var(--sh-1);
+}
+.logo-mark .ico{width:25px;height:25px;color:var(--cream)}
+.logo small{display:block;font-weight:600;font-size:10.5px;color:var(--ink-3);line-height:1.5}
+.nav-links{display:flex;gap:4px;margin-inline-start:22px}
+.nav-links a{
+  font-weight:700;font-size:14px;padding:8px 13px;border-radius:999px;
+  color:var(--ink);text-decoration:none;border:1px solid transparent;
+  transition:.18s;white-space:nowrap;min-height:44px;display:flex;align-items:center;
+}
+.nav-links a:hover{background:var(--mustard-soft);border-color:var(--ink)}
+.nav-links a.active{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.nav-right{margin-inline-start:auto;display:flex;align-items:center;gap:12px}
+.hours-pill{
+  display:inline-flex;align-items:center;gap:8px;background:var(--mint);
+  border:var(--line) solid var(--ink);border-radius:999px;padding:7px 14px;
+  font-weight:800;font-size:12px;white-space:nowrap;
+}
+.pulse{width:8px;height:8px;border-radius:50%;background:var(--ink);animation:blink 1.7s steps(1,end) infinite}
+@keyframes blink{0%,55%{opacity:1}56%,100%{opacity:.2}}
+
+.burger{
+  display:none;width:44px;min-width:44px;height:44px;align-items:center;justify-content:center;
+  background:var(--cream);border:var(--line) solid var(--ink);border-radius:var(--r-sm);
+  box-shadow:var(--sh-1);cursor:pointer;flex:0 0 44px;
+}
+.scrim{
+  position:fixed;inset:0 0 0 0;z-index:60;background:rgba(46,33,25,.5);
+  opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s;
+}
+body.lock .scrim{opacity:1;visibility:visible}
+/* the drawer header (title + close) only exists in drawer mode */
+.drawer-head{display:none}
+@media (max-width:1080px){
+  /* keep the header clear so the burger stays reachable while the menu is open */
+  body.lock .scrim{inset-block-start:var(--navh)}
+}
+
+/* ============================================================
+   5 · HERO
+   ============================================================ */
+.hero{position:relative;overflow:hidden;background:var(--cream);border-bottom:var(--line) solid var(--ink)}
+.hero .wrap{
+  position:relative;z-index:2;max-width:var(--maxw);margin-inline:auto;
+  padding:clamp(34px,5vw,62px) var(--pad) clamp(54px,7vw,94px);
+  display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);
+  gap:clamp(32px,5vw,64px);align-items:center;
+}
+.hero h1{font-size:clamp(2rem,5vw,3.9rem);margin:24px 0 0}
+.hero h1 .hl{background:var(--coral);color:#FFF8F1}
+.fig{position:relative}
+.fig .frame{
+  border:var(--line) solid var(--ink);border-radius:var(--r-lg);
+  overflow:hidden;aspect-ratio:4/3;background:var(--peach);
+  box-shadow:var(--sh-3),var(--sh-soft);
+}
+.fig .frame img{width:100%;height:100%;object-fit:cover}
+.fig .tab{
+  position:absolute;inset-inline-start:22px;bottom:-16px;
+  background:var(--cream);border:var(--line) solid var(--ink);
+  border-radius:var(--r-md);box-shadow:var(--sh-1);
+  padding:11px 18px;font-weight:900;font-size:14.5px;
+}
+.fig .tab small{display:block;font-weight:600;font-size:11.5px;color:var(--ink-3);line-height:1.5}
+.fig .stamp{
+  position:absolute;inset-inline-end:-18px;top:-18px;
+  width:clamp(96px,10vw,118px);aspect-ratio:1;border-radius:50%;
+  background:var(--mustard);border:var(--line) solid var(--ink);
+  display:grid;place-content:center;text-align:center;box-shadow:var(--sh-2);
+}
+.fig .stamp b{display:block;font-weight:900;font-size:27px;line-height:1.2}
+.fig .stamp span{font-size:10.5px;font-weight:800}
+
+.trust{
+  display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:34px;
+  padding-top:26px;border-top:var(--line) dashed rgba(46,33,25,.28);
+}
+.trust li{display:flex;align-items:center;gap:9px;font-size:13.5px;font-weight:700;color:var(--ink-2)}
+.trust .ico{width:20px;height:20px;flex:0 0 20px;color:var(--mint)}
+
+/* ============================================================
+   6 · TICKER
+   ============================================================ */
+.ticker{
+  overflow:hidden;background:var(--ink);color:var(--cream);
+  border-bottom:var(--line) solid var(--ink);direction:ltr;
+  padding:13px 0;
+}
+.ticker .track{
+  display:flex;width:max-content;animation:slide 38s linear infinite;
+}
+.ticker .group{display:flex;align-items:center;gap:34px;padding-inline-end:34px;direction:rtl}
+.ticker span{font-weight:800;font-size:13.5px;white-space:nowrap;display:flex;align-items:center;gap:9px}
+.ticker .ico{width:16px;height:16px;flex:0 0 16px;color:var(--mustard)}
+.ticker em{color:var(--mustard);font-style:normal}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ============================================================
+   7 · STATS
+   ============================================================ */
+.stats{background:var(--mustard-soft);border-bottom:var(--line) solid var(--ink)}
+.stats .grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+}
+.stats .cell{
+  padding:clamp(24px,3vw,36px) clamp(16px,2.4vw,28px);
+  border-inline-start:var(--line) solid var(--ink);
+}
+.stats .cell:first-child{border-inline-start:0}
+.stats b{display:block;font-weight:900;font-size:clamp(1.7rem,3.4vw,2.5rem);line-height:1.3}
+.stats span{font-size:13px;font-weight:700;color:var(--ink-2)}
+
+/* ============================================================
+   8 · BANDS · TILES
+   ============================================================ */
+.band{
+  background:var(--sand);border-bottom:var(--line) solid var(--ink);
+  position:relative;z-index:2;
+}
+.band .shell{padding-block:var(--sec)}
+.band-cream{background:var(--cream)}
+.band-ink{background:var(--ink);color:var(--cream)}
+.band-ink h2,.band-ink h3{color:var(--cream)}
+.band-ink .lede,.band-ink .step p{color:#D8C8B6}
+
+.svcgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:16px}
+.tile{
+  display:flex;align-items:center;gap:14px;background:var(--cream);
+  border:var(--line) solid var(--ink);border-radius:var(--r-md);
+  padding:15px 17px;font-weight:800;font-size:15px;text-decoration:none;
+  transition:transform .18s,box-shadow .18s,background .18s;
+}
+a.tile:hover{transform:translateY(-3px);box-shadow:var(--sh-1);background:var(--mustard-soft)}
+.tile .ic{
+  width:40px;height:40px;flex:0 0 40px;display:grid;place-items:center;
+  background:var(--mustard-soft);border:var(--line) solid var(--ink);border-radius:12px;
+}
+.tile .ic .ico{width:21px;height:21px}
+.tile.on{background:var(--coral);color:#FFF8F1}
+.tile.on .ic{background:var(--cream);color:var(--coral)}
+a.tile.on:hover{background:#D9704C}
+.tile small{display:block;font-weight:600;font-size:12px;color:var(--ink-3);line-height:1.7;margin-top:2px}
+.tile.on small{color:#FFE6D8}
+
+/* ============================================================
+   9 · SERVICE CARDS
+   ============================================================ */
+.cards{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(288px,1fr));
+  gap:20px;
+}
+.card{
+  position:relative;display:flex;flex-direction:column;
+  background:var(--cream);border:var(--line) solid var(--ink);
+  border-radius:var(--r-lg);padding:26px 24px 24px;box-shadow:var(--sh-1);
+  transition:transform .2s,box-shadow .2s;
+}
+.card:hover{transform:translateY(-4px);box-shadow:var(--sh-2),var(--sh-soft)}
+.card .num{
+  position:absolute;inset-block-start:20px;inset-inline-end:22px;
+  font-weight:900;font-size:14px;color:var(--ink);opacity:.28;
+}
+.card .ic{
+  width:52px;height:52px;flex:0 0 52px;display:grid;place-items:center;
+  background:var(--mustard);border:var(--line) solid var(--ink);
+  border-radius:16px;margin-bottom:16px;box-shadow:var(--sh-1);
+}
+.card .ic .ico{width:26px;height:26px}
+.card h3{font-size:18px;margin-bottom:8px;padding-inline-end:34px}
+.card p{font-size:13.5px;color:var(--ink-2);margin-bottom:16px}
+.card .meta{
+  margin-top:auto;padding-top:13px;border-top:1px dashed rgba(46,33,25,.26);
+  font-size:12px;font-weight:800;color:var(--ink-3);
+}
+.card.feat{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.card.feat .num{color:var(--cream);opacity:.28}
+.card.feat .ic{background:var(--coral);color:#FFF8F1}
+.card.feat p{color:#D8C8B6}
+.card.feat .meta{color:var(--mustard-soft);border-top-color:rgba(251,243,231,.24)}
+.card .price{
+  display:inline-flex;align-items:center;gap:7px;align-self:flex-start;
+  margin-bottom:14px;background:var(--mint);border:var(--line) solid var(--ink);
+  border-radius:999px;padding:5px 13px;font-weight:900;font-size:12.5px;
+}
+.card .price .ico{width:15px;height:15px;flex:0 0 15px}
+
+/* ============================================================
+   10 · SPLIT FEATURE
+   ============================================================ */
+.split{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:clamp(26px,4vw,56px);align-items:center;
+}
+.split.flip{direction:ltr}
+.split.flip > *{direction:rtl}
+.split .frame{
+  border:var(--line) solid var(--ink);border-radius:var(--r-lg);
+  overflow:hidden;aspect-ratio:4/3;background:var(--peach);
+  box-shadow:var(--sh-2),var(--sh-soft);
+}
+.split .frame img{width:100%;height:100%;object-fit:cover}
+.split h2{font-size:clamp(1.5rem,3.2vw,2.5rem);margin:18px 0 0}
+
+/* ============================================================
+   11 · DOCTOR
+   ============================================================ */
+.docgrid{
+  display:grid;grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr);
+  gap:clamp(30px,4.5vw,62px);align-items:center;
+}
+.docgrid h2{font-size:clamp(1.75rem,4vw,3.1rem);margin:20px 0 0}
+.portrait{position:relative}
+.portrait .frame{
+  border:var(--line) solid var(--ink);border-radius:var(--r-lg);
+  overflow:hidden;aspect-ratio:3/4;background:var(--peach);
+  box-shadow:var(--sh-3),var(--sh-soft);
+}
+.portrait .frame img{width:100%;height:100%;object-fit:cover;object-position:center 18%}
+.portrait .plate{
+  position:absolute;inset-inline-start:20px;bottom:-18px;
+  background:var(--cream);border:var(--line) solid var(--ink);
+  border-radius:var(--r-md);box-shadow:var(--sh-1);padding:12px 18px;
+}
+.portrait .plate b{display:block;font-weight:900;font-size:17px;line-height:1.5}
+.portrait .plate small{font-size:11.5px;font-weight:700;color:var(--ink-2)}
+.biogrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:22px;margin-top:34px}
+.fact{border-inline-start:var(--line) solid var(--coral);padding-inline-start:18px}
+.fact b{display:block;font-weight:900;font-size:15px;margin-bottom:4px}
+.fact span{font-size:13.5px;color:var(--ink-2);line-height:1.95}
+.docline{
+  display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;align-items:center;
+  background:var(--cream);border:var(--line) solid var(--ink);
+  border-radius:var(--r-lg);padding:14px;box-shadow:var(--sh-1);
+}
+.docline .frame{
+  width:clamp(96px,11vw,122px);aspect-ratio:3/4;overflow:hidden;
+  border:var(--line) solid var(--ink);border-radius:var(--r-sm);background:var(--peach);
+}
+.docline .frame img{width:100%;height:100%;object-fit:cover;object-position:center 18%}
+.docline b{font-weight:900;font-size:18.5px;display:block;line-height:1.5}
+.docline p{font-size:13.5px;color:var(--ink-2);margin-top:5px}
+.docline .ok{
+  display:inline-block;margin-top:12px;background:var(--mint);
+  border:var(--line) solid var(--ink);border-radius:999px;
+  padding:5px 13px;font-weight:800;font-size:12px;
+}
+
+/* ============================================================
+   12 · STEPS
+   ============================================================ */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.step{
+  position:relative;background:var(--cream);border:var(--line) solid var(--ink);
+  border-radius:var(--r-lg);padding:24px 22px;box-shadow:var(--sh-1);
+  transition:transform .2s,box-shadow .2s;
+}
+.step:hover{transform:translateY(-3px);box-shadow:var(--sh-2)}
+.step .n{
+  width:46px;height:46px;border-radius:50%;display:grid;place-items:center;
+  background:var(--ink);color:var(--cream);font-weight:900;font-size:17px;
+  margin-bottom:14px;
+}
+.step h3{font-size:16.5px;margin-bottom:6px}
+.step p{font-size:13.5px;color:var(--ink-2)}
+
+/* ============================================================
+   13 · GALLERY
+   ============================================================ */
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.gal figure{
+  border:var(--line) solid var(--ink);border-radius:var(--r-lg);
+  overflow:hidden;background:var(--cream);box-shadow:var(--sh-1);
+  transition:transform .2s,box-shadow .2s;
+}
+.gal figure:hover{transform:translateY(-4px);box-shadow:var(--sh-2)}
+.gal .frame{aspect-ratio:1/1;background:var(--sand);overflow:hidden}
+.gal .frame img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.gal figure:hover img{transform:scale(1.05)}
+.gal figcaption{padding:14px 16px;font-weight:800;font-size:13.5px}
+
+/* ============================================================
+   14 · TESTIMONIALS
+   ============================================================ */
+.quotebar{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.quote{
+  background:var(--cream);border:var(--line) solid var(--ink);
+  border-radius:var(--r-lg);padding:26px 24px;box-shadow:var(--sh-1);
+  display:flex;flex-direction:column;
+}
+.quote .mark{
+  font-size:38px;line-height:.7;font-weight:900;color:var(--mustard);margin-bottom:8px;
+}
+.quote p{font-size:15px;color:var(--ink-2)}
+.quote footer{margin-top:18px;padding-top:14px;border-top:1px dashed rgba(46,33,25,.26);font-weight:900;font-size:13.5px}
+.quote footer span{display:block;font-weight:600;font-size:12px;color:var(--ink-3)}
+.stars{display:flex;gap:3px;margin-bottom:12px;color:var(--coral)}
+.stars .ico{width:16px;height:16px;flex:0 0 16px;fill:currentColor;stroke:currentColor;stroke-width:0}
+
+/* ============================================================
+   15 · BOOKING
+   ============================================================ */
+.bookwrap{
+  position:relative;z-index:2;max-width:var(--maxw);margin-inline:auto;
+  padding:clamp(34px,5vw,60px) var(--pad) clamp(52px,6vw,88px);
+  display:grid;grid-template-columns:minmax(0,.94fr) minmax(0,1.06fr);
+  gap:clamp(24px,3.4vw,46px);align-items:start;
+}
+.formcard{
+  background:var(--mustard-soft);border:var(--line) solid var(--ink);
+  border-radius:var(--r-lg);padding:clamp(24px,3.2vw,38px);
+  box-shadow:var(--sh-2),var(--sh-soft);
+}
+.formcard h2{font-size:clamp(1.55rem,3.2vw,2.4rem);margin:18px 0 0}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
+.fcell{display:flex;flex-direction:column;gap:7px;min-width:0}
+.fcell.wide{grid-column:1/-1}
+.fcell > span.lbl{font-weight:800;font-size:13px}
+.inp{
+  width:100%;background:var(--cream);border:var(--line) solid var(--ink);
+  border-radius:var(--r-sm);padding:13px 15px;font-size:16px;font-weight:600;
+  transition:transform .16s,box-shadow .16s,background .18s,border-color .18s;
+}
+.inp::placeholder{color:#A89383;font-weight:500}
+.inp:hover{background:#fff}
+.inp:focus{outline:none;box-shadow:var(--sh-1);transform:translate(var(--press),var(--press));background:#fff}
+select.inp{
+  cursor:pointer;appearance:none;padding-inline-end:42px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232E2119' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:left 14px center;background-size:18px;
+}
+textarea.inp{min-height:92px;resize:vertical;line-height:1.9}
+.fcell.bad .inp{border-color:var(--danger);background:#FBE7E1}
+.fcell .err{display:none;font-size:12px;font-weight:700;color:var(--danger)}
+.fcell.bad .err{display:block}
+.chipset{display:flex;flex-wrap:wrap;gap:9px}
+.chipset input{position:absolute;opacity:0;pointer-events:none}
+.chipset label{
+  display:inline-flex;align-items:center;gap:7px;cursor:pointer;
+  background:var(--cream);border:var(--line) solid var(--ink);border-radius:999px;
+  padding:9px 15px;font-weight:800;font-size:13px;
+  transition:transform .16s,background .18s,color .18s;
+}
+.chipset label:hover{transform:translateY(-2px);background:var(--mustard)}
+.chipset input:checked + label{background:var(--coral);color:#FFF8F1}
+.chipset input:focus-visible + label{outline:3px solid var(--coral);outline-offset:3px}
+.formfoot{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:24px}
+.formfoot small{font-size:12.5px;color:var(--ink-2)}
+.done{
+  display:none;text-align:center;padding:12px 0 4px;
+}
+.done.show{display:block;animation:pop .38s cubic-bezier(.2,.9,.3,1.3)}
+.done .ok{
+  width:70px;height:70px;border-radius:50%;display:grid;place-items:center;
+  background:var(--mint);border:var(--line) solid var(--ink);
+  box-shadow:var(--sh-2);margin:0 auto 18px;
+}
+.done .ok .ico{width:34px;height:34px;flex:0 0 34px;stroke-width:3}
+.done h3{font-size:20px;margin-bottom:8px}
+.done p{font-size:14px;color:var(--ink-2);max-width:40ch;margin-inline:auto}
+.done .recap{
+  margin-top:20px;background:var(--cream);border:var(--line) dashed rgba(46,33,25,.4);
+  border-radius:var(--r-md);padding:16px 18px;text-align:start;font-size:13.5px;
+}
+.done .recap div{display:flex;justify-content:space-between;gap:12px;padding:5px 0}
+.done .recap b{font-weight:800}
+@keyframes pop{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
+
+.stackcol{display:flex;flex-direction:column;gap:20px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chips .tile{border-radius:999px;padding:9px 15px;font-size:13.5px}
+.chips .tile .ic{width:30px;height:30px;flex:0 0 30px;border-radius:50%;background:var(--coral-soft)}
+.chips .tile .ic .ico{width:16px;height:16px}
+.sos{
+  display:flex;align-items:center;gap:18px;flex-wrap:wrap;
+  background:var(--coral);color:#FFF8F1;border:var(--line) solid var(--ink);
+  border-radius:var(--r-lg);padding:22px 24px;box-shadow:var(--sh-1);
+}
+.sos b{font-weight:900;font-size:18px;display:block}
+.sos p{font-size:13.5px;opacity:.94;margin-top:3px}
+.sos .btn{margin-inline-start:auto;background:var(--cream);color:var(--coral);border-color:var(--ink)}
+
+/* ============================================================
+   16 · HOURS / CONTACT / FAQ
+   ============================================================ */
+.hours{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.hrs{
+  background:var(--cream);border:var(--line) solid var(--ink);
+  border-radius:var(--r-lg);padding:24px 22px 26px;box-shadow:var(--sh-1);
+}
+.hrs h3{font-size:16px;margin-bottom:14px;display:flex;align-items:center;gap:9px}
+.hrs h3 .ico{width:19px;height:19px;flex:0 0 19px;color:var(--coral)}
+.hrs dl{display:grid;gap:9px;font-size:13.5px}
+.hrs dl div{
+  display:flex;justify-content:space-between;gap:12px;
+  border-bottom:1px dashed rgba(46,33,25,.22);padding-bottom:8px;
+}
+.hrs dt{color:var(--ink-2)}
+.hrs dd{font-weight:800}
+.hrs .off{color:var(--danger)}
+.hrs .tel{font-weight:900;font-size:19px;direction:ltr;text-align:start;display:block;margin-bottom:12px}
+.hrs .tels{display:grid;gap:9px;font-size:13.5px}
+.hrs .tels div{
+  display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+  border-bottom:1px dashed rgba(46,33,25,.22);padding-bottom:8px;
+}
+.hrs .tels dt{color:var(--ink-2);flex:0 0 auto}
+.hrs .tels dd{font-weight:900;font-size:16px;direction:ltr}
+.hrs .tels a{
+  text-decoration:none;color:inherit;display:flex;align-items:center;
+  min-height:44px;transition:color .18s;
+}
+.hrs .tels a:hover{color:var(--coral)}
+.hrs p{font-size:14px;color:var(--ink-2)}
+.hrs .hint{font-size:12.5px;color:var(--ink-3);margin-top:10px}
+
+.map{
+  margin-top:20px;display:grid;place-items:center;text-align:center;
+  background:var(--sand);border:var(--line) dashed rgba(46,33,25,.4);
+  border-radius:var(--r-lg);padding:34px 22px;
+}
+.map .ico{width:44px;height:44px;flex:0 0 44px;color:var(--coral);margin-bottom:12px}
+.map b{display:block;font-weight:900;font-size:17px;margin-bottom:6px}
+.map p{font-size:13.5px;color:var(--ink-2);max-width:44ch;margin-inline:auto}
+
+.faq{display:grid;gap:12px;max-width:840px}
+.faq details{background:var(--cream);border:var(--line) solid var(--ink);border-radius:var(--r-md);padding:16px 20px;box-shadow:var(--sh-1)}
+.faq summary{
+  cursor:pointer;font-weight:800;font-size:15px;list-style:none;
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  min-height:44px;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-weight:900;font-size:21px;color:var(--coral);flex:0 0 auto;line-height:1}
+.faq details[open] summary::after{content:"−"}
+.faq p{font-size:14px;color:var(--ink-2);margin-top:12px}
+
+/* ============================================================
+   17 · CTA + FOOTER
+   ============================================================ */
+.ctacard{
+  background:var(--ink);color:var(--cream);border:var(--line) solid var(--ink);
+  border-radius:var(--r-lg);padding:clamp(30px,4.5vw,56px);
+  box-shadow:var(--sh-3);text-align:center;
+}
+.ctacard h2{font-size:clamp(1.6rem,3.8vw,2.7rem);max-width:22ch;margin-inline:auto}
+.ctacard p{color:#D8C8B6;max-width:48ch;margin:16px auto 0;font-size:15.5px}
+.ctacard .actions{justify-content:center}
+
+.foot{background:#241A14;color:var(--cream);border-top:var(--line) solid var(--ink)}
+.foot .cols{
+  display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;
+  gap:clamp(24px,3vw,44px);padding-block:clamp(40px,5vw,64px);
+}
+.foot h4{font-size:14px;color:var(--mustard);margin-bottom:14px}
+.foot p,.foot a{font-size:14px;color:#E7D9C9;line-height:2.05;text-decoration:none;display:block}
+.foot a:hover{color:var(--mustard)}
+.foot .social{display:flex;gap:9px;margin-top:16px}
+.foot .social a{
+  width:44px;height:44px;display:grid;place-items:center;padding:0;
+  border:var(--line) solid rgba(251,243,231,.3);border-radius:12px;
+  transition:background .18s,color .18s,border-color .18s;
+}
+.foot .social a:hover{background:var(--mustard);color:var(--ink);border-color:var(--mustard)}
+.addr{
+  display:flex;gap:13px;align-items:flex-start;margin:4px 0 18px;
+  background:rgba(251,243,231,.06);border:var(--line) solid rgba(251,243,231,.22);
+  border-radius:var(--r-md);padding:14px 16px;
+}
+.addr .ico{width:20px;height:20px;flex:0 0 20px;color:var(--mustard);margin-top:5px}
+.addr b{display:block;font-weight:900;font-size:14.5px;margin-bottom:3px;color:var(--cream)}
+.addr small{font-size:12.5px;color:#C9B7A4;line-height:1.9;display:block}
+.foot .bar{
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  padding:16px var(--pad);border-top:1px solid rgba(251,243,231,.18);
+  font-size:12.5px;color:#A89383;
+}
+
+.totop{
+  position:fixed;inset-block-end:22px;inset-inline-start:22px;z-index:75;
+  width:48px;height:48px;display:grid;place-items:center;
+  background:var(--mustard);color:var(--ink);border:var(--line) solid var(--ink);
+  border-radius:50%;box-shadow:var(--sh-2);cursor:pointer;
+  opacity:0;visibility:hidden;transform:translateY(10px);
+  transition:opacity .25s,visibility .25s,transform .25s,background .18s;
+}
+.totop.show{opacity:1;visibility:visible;transform:none}
+.totop:hover{background:var(--coral);color:#FFF8F1}
+.totop .ico{width:22px;height:22px;flex:0 0 22px;stroke-width:2.6}
+
+/* ---- mobile sticky action bar (thumb reach) ---- */
+.mobbar{
+  position:fixed;inset-inline:0;inset-block-end:0;z-index:74;display:none;
+  gap:10px;padding:10px var(--pad);
+  height:calc(66px + env(safe-area-inset-bottom));
+  padding-bottom:calc(10px + env(safe-area-inset-bottom));
+  background:var(--cream);border-top:var(--line) solid var(--ink);
+  box-shadow:0 -8px 24px -14px rgba(46,33,25,.5);
+  transition:transform .28s cubic-bezier(.2,.8,.2,1);
+}
+.mobbar .btn{flex:1;box-shadow:var(--sh-1)}
+.mobbar .btn:active{transform:translate(2px,2px);box-shadow:none}
+.mobbar.hide{transform:translateY(110%);transition:transform .28s cubic-bezier(.2,.8,.2,1)}
+
+/* ============================================================
+   18 · REVEAL
+   ============================================================ */
+[data-rev]{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.8,.2,1)}
+[data-rev].in{opacity:1;transform:none}
+
+/* ============================================================
+   19 · RESPONSIVE
+   ============================================================ */
+@media (max-width:1080px){
+  .nav-links{
+    position:fixed;inset-block:var(--navh) 0;inset-inline-end:0;z-index:79;
+    width:min(330px,86vw);flex-direction:column;gap:8px;margin:0;
+    padding:22px 22px 30px;background:var(--cream);
+    border-inline-start:var(--line) solid var(--ink);
+    transform:translateX(-102%);transition:transform .3s cubic-bezier(.2,.8,.2,1);
+    overflow-y:auto;overscroll-behavior:contain;
+  }
+  body.lock .nav-links{transform:none}
+  .nav-links a{font-size:16px;padding:13px 16px;border-radius:var(--r-sm);border-color:rgba(46,33,25,.16)}
+  .drawer-head{
+    display:flex;align-items:center;justify-content:space-between;gap:14px;
+    margin-bottom:16px;padding-bottom:16px;
+    border-bottom:var(--line) solid rgba(46,33,25,.2);
+  }
+  .drawer-head b{font-weight:900;font-size:15px;line-height:1.6}
+  .drawer-close{
+    width:44px;height:44px;flex:0 0 44px;display:grid;place-items:center;
+    background:var(--coral);color:#FFF8F1;border:var(--line) solid var(--ink);
+    border-radius:var(--r-sm);box-shadow:var(--sh-1);cursor:pointer;
+    transition:transform .16s,box-shadow .16s,background .18s;
+  }
+  .drawer-close:hover{background:#D9704C}
+  .drawer-close:active{transform:translate(2px,2px);box-shadow:none}
+  .drawer-close .ico{width:20px;height:20px;flex:0 0 20px;stroke-width:2.6}
+  /* burger sits on the same edge the drawer slides in from, and never gets covered */
+  .nav-right{margin-inline-start:auto}
+  .burger{display:flex}
+  .hours-pill{display:none}
+  .hero .wrap,.docgrid,.split,.bookwrap{grid-template-columns:1fr}
+  .fig,.portrait{max-width:520px;margin-inline:auto;width:100%}
+  .split.flip{direction:rtl}
+  .stats .cell{border-inline-start:0;border-block-start:var(--line) solid var(--ink)}
+  .stats .cell:nth-child(-n+2){border-block-start:0}
+  .foot .cols{grid-template-columns:1fr 1fr}
+  /* touch devices: comfortable tap rows in the footer */
+  .foot a:not(.social a){min-height:44px;display:flex;align-items:center}
+}
+@media (max-width:760px){
+  .frow{grid-template-columns:1fr}
+  .fcell.wide{grid-column:auto}
+  .stats .cell{border-block-start:var(--line) solid var(--ink)}
+  .stats .cell:first-child{border-block-start:0}
+  .foot .cols{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  :root{
+    --line:1.5px;
+    --sh-1:2.5px 2.5px 0 rgba(46,33,25,.92);
+    --sh-2:4px 4px 0 rgba(46,33,25,.92);
+    --sh-3:6px 6px 0 rgba(46,33,25,.92);
+    --press:-2px;
+  }
+  body{padding-bottom:calc(72px + env(safe-area-inset-bottom))}
+  .mobbar{display:flex}
+  .totop{inset-block-end:calc(84px + env(safe-area-inset-bottom));inset-inline-start:16px;width:44px;height:44px}
+  .nav{padding:12px 18px;gap:12px}
+  .logo{font-size:16.5px;min-height:44px}
+  .logo small{font-size:11.5px}
+  .logo-mark{width:38px;height:38px;flex:0 0 38px}
+  .logo-mark .ico{width:22px;height:22px}
+  .btn-sm{padding:9px 15px;font-size:12.5px}
+  .actions .btn,.formfoot .btn{width:100%}
+  .actions{gap:12px}
+  .hero h1{font-size:clamp(1.75rem,7.6vw,2.4rem)}
+  .fig .stamp{inset-inline-end:-4px;top:-14px;width:88px}
+  .fig .stamp b{font-size:22px}
+  .fig .stamp span{font-size:11px}
+  .fig .tab{inset-inline-start:14px;bottom:-13px;font-size:13px;padding:9px 14px}
+  .portrait .plate{inset-inline-start:12px;bottom:-16px;padding:9px 15px}
+  .portrait .plate b{font-size:14.5px}
+  .docline{grid-template-columns:1fr;text-align:center;justify-items:center}
+  .docline .frame{width:120px}
+  .sos .btn{margin-inline-start:0;width:100%}
+  .card{padding:22px 20px 20px}
+  .sechead{gap:14px}
+  .trust{gap:10px 18px}
+  .foot .bar{justify-content:center;text-align:center}
+  .foot .cols{padding-bottom:40px}
+  .fig .stamp span{font-size:12px}
+  /* keep the drawer's last link clear of the sticky action bar */
+  .nav-links{padding-bottom:calc(104px + env(safe-area-inset-bottom))}
+}
+/* very narrow phones: drop the header CTA, the action bar covers it */
+@media (max-width:400px){
+  .nav-right .btn-sm{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  [data-rev]{opacity:1;transform:none}
+}
+@media print{
+  .nav,.ticker,.totop,.scrim,.burger{display:none}
+  .band,.hero{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">پرش به محتوای اصلی</a>
+
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="i-paw" viewBox="0 0 24 24"><ellipse cx="6.2" cy="7.4" rx="2.5" ry="3.2"/><ellipse cx="17.8" cy="7.4" rx="2.5" ry="3.2"/><ellipse cx="3.4" cy="13" rx="2.2" ry="2.9"/><ellipse cx="20.6" cy="13" rx="2.2" ry="2.9"/><path d="M12 11.2c3.1 0 5.6 2.7 5.6 5.2 0 2.2-1.7 3.4-3.7 3.4-1.2 0-1.9-.5-1.9-1.3 0-.8.8-1.1.8-1.9 0-.7-.7-1.2-.8-1.9-.1-.7.5-1.4.5-1.4s-1.7.6-1.7 1.9c0 .9.7 1.3.7 1.9 0 .7-.7 1.3-1.9 1.3-2 0-3.7-1.2-3.7-3.4 0-2.5 2.5-5.2 5.6-5.2z"/></symbol>
+  <symbol id="i-steth" viewBox="0 0 24 24"><path d="M6 2v5a5 5 0 0 0 10 0V2"/><path d="M4.5 2h3M9.5 2h3"/><path d="M11 12v2.5A6 6 0 0 0 17 20.5h.5"/><circle cx="19" cy="20.5" r="2"/></symbol>
+  <symbol id="i-chip" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2.5"/><rect x="10" y="10" width="4" height="4" rx="1"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/></symbol>
+  <symbol id="i-scalpel" viewBox="0 0 24 24"><path d="M4 20l7.2-7.2"/><path d="M11.2 12.8l7-7a2.1 2.1 0 0 1 3 3l-7 7z"/><path d="M14 8.2l2.6 2.6"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 6.6a5 5 0 0 0-7.1 0L12 8.3l-1.7-1.7a5 5 0 1 0-7.1 7.1L12 22l8.8-8.3a5 5 0 0 0 0-7.1z"/><path d="M4 12.6h3.6l1.4-2.4 2 4.8 1.5-2.4H20"/></symbol>
+  <symbol id="i-tooth" viewBox="0 0 24 24"><path d="M12 3.2c-2 0-2.6 1-4.4 1C5.4 4.2 4 5.6 4 7.8c0 3 1.3 4.4 1.9 7.2.5 2.4.6 4 2 4 1.6 0 1.6-3.2 4.1-3.2s2.5 3.2 4.1 3.2c1.4 0 1.5-1.6 2-4 .6-2.8 1.9-4.2 1.9-7.2 0-2.2-1.4-3.6-3.6-3.6-1.8 0-2.4-1-4.4-1z"/></symbol>
+  <symbol id="i-scissors" viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><path d="M20 4L8.6 15.4M14 20l6-6M8.6 8.6L20 20"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l1 12H4L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/><path d="M9.5 12.5h5"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.2l2.3 4.7 5.2.8-3.8 3.6.9 5.1L12 14.9l-4.6 2.5.9-5.1L4.5 8.7l5.2-.8L12 3.2z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-5.6-7-11a7 7 0 1 1 14 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.3l3.4 2"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h3.5l2 5-2.4 1.6a12.5 12.5 0 0 0 5.3 5.3L15 13.5l5 2V19a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 3 6.2 2 2 0 0 1 5 4z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><path d="M8 2v4M16 2v4M3 10h18"/><rect x="3" y="4" width="18" height="18" rx="3"/></symbol>
+  <symbol id="i-badge" viewBox="0 0 24 24"><path d="M12 2.6l2.4 1.8 3-.2.9 2.9 2.4 1.8-1.2 2.7 1.2 2.7-2.4 1.8-.9 2.9-3-.2L12 21.4l-2.4-1.8-3 .2-.9-2.9-2.4-1.8 1.2-2.7-1.2-2.7 2.4-1.8.9-2.9 3 .2L12 2.6z"/><path d="M9 12l2 2 4-4"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2.5l8 3v6c0 5-3.4 8.9-8 10-4.6-1.1-8-5-8-10v-6l8-3z"/><path d="M9 12l2 2 4-4"/></symbol>
+  <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M20 8V6.5A1.5 1.5 0 0 0 18.5 5H5.5A1.5 1.5 0 0 0 4 6.5v11A1.5 1.5 0 0 0 5.5 19h13a1.5 1.5 0 0 0 1.5-1.5V8z"/><path d="M4 8h16v5h-4.5a2.5 2.5 0 0 1 0-5H20"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7.5l8 5.5 8-5.5"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 20V5M6 11l6-6 6 6"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M5 17h14M4 17v2M20 17v2"/><path d="M3.5 17v-4l2-5.2A2 2 0 0 1 7.4 6.5h9.2a2 2 0 0 1 1.9 1.3l2 5.2v4"/><circle cx="7.5" cy="14" r="1.2"/><circle cx="16.5" cy="14" r="1.2"/></symbol>
+  <symbol id="i-insta" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-mobile" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="3"/><path d="M10.5 5.5h3"/><circle cx="12" cy="18.3" r="1.1" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-tele" viewBox="0 0 24 24"><path d="M21.5 4.5L2.8 11.2a.6.6 0 0 0-.1 1l4.4 1.5 1.7 4.9a.6.6 0 0 0 1 .2z"/><path d="M7.1 13.7L20 4.5M10.5 18.6l3.4-3.4"/></symbol>
+  <symbol id="i-syringe" viewBox="0 0 24 24"><path d="M18.5 2.5l3 3M16 5l3 3M13.5 6.5l4 4M11 9l-7.2 7.2a2 2 0 0 0 0 2.8l1.2 1.2a2 2 0 0 0 2.8 0L15 13"/><path d="M9 11l2 2M6 14l2 2M3 17l4 4"/></symbol>
+</svg>
+
+<div class="scrim" id="scrim"></div>
+
+<header class="nav" id="nav">
+  <a class="logo" href="#top">
+    <span class="logo-mark" aria-hidden="true"><svg class="ico ico-fill"><use href="#i-paw"/></svg></span>
+    <span>کلینیک دامپزشکی روما<small>از سال ۱۳۷۳ · نیاوران تهران</small></span>
+  </a>
+
+  <nav class="nav-links" id="menu" aria-label="فهرست اصلی">
+    <div class="drawer-head">
+      <b>فهرست کلینیک</b>
+      <button class="drawer-close" id="drawerClose" type="button" aria-label="بستن منو">
+        <svg class="ico" aria-hidden="true"><use href="#i-x"/></svg>
+      </button>
+    </div>
+    <a href="#services">خدمات</a>
+    <a href="#surgery">جراحی</a>
+    <a href="#doctor">پزشک</a>
+    <a href="#process">مراحل ویزیت</a>
+    <a href="#gallery">گالری</a>
+    <a href="#reviews">نظرات</a>
+    <a href="#faq">سؤالات</a>
+    <a href="#contact">تماس</a>
+  </nav>
+
+  <div class="nav-right">
+    <span class="hours-pill"><i class="pulse" aria-hidden="true"></i>پذیرش باز است</span>
+    <a class="btn btn-primary btn-sm" href="#book">رزرو نوبت</a>
+    <button class="burger" id="burger" aria-label="باز کردن منو" aria-expanded="false" aria-controls="menu">
+      <svg class="ico" id="burgerIcon"><use href="#i-menu"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<div id="top"></div>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero bgdots" aria-labelledby="heroTitle">
+  <div class="wrap">
+    <div data-rev>
+      <span class="eyebrow">
+        <svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg>
+        پذیرش بدون نوبت قبلی هم داریم
+      </span>
+      <h1 id="heroTitle">همه‌چیز برای سلامت حیوان خانگی، <span class="hl">زیر یک سقف</span></h1>
+      <p class="lede" style="margin-top:22px">
+        از چک‌آپ و واکسیناسیون تا جراحی تخصصی، دندانپزشکی، آرایشگاه و پت‌شاپ —
+        همه را <strong>یک دامپزشک</strong> انجام می‌دهد و توضیح هر مرحله را کامل برایتان می‌گوید.
+      </p>
+      <div class="actions">
+        <a class="btn btn-primary btn-lg" href="#book">
+          <svg class="ico" aria-hidden="true"><use href="#i-cal"/></svg>
+          رزرو نوبت
+        </a>
+        <a class="btn btn-lg" href="#services">
+          خدمات کلینیک
+          <svg class="ico flip" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </a>
+      </div>
+      <ul class="trust">
+        <li><svg class="ico ico-fill" aria-hidden="true"><use href="#i-star"/></svg>بیش از ۵۰ سال سابقه کلینیک</li>
+        <li><svg class="ico ico-fill" aria-hidden="true"><use href="#i-badge"/></svg>۸ خدمت زیر یک سقف</li>
+        <li><svg class="ico ico-fill" aria-hidden="true"><use href="#i-heart"/></svg>روش کم‌تنش و بدون اجبار</li>
+      </ul>
+    </div>
+
+    <figure class="fig" data-rev>
+      <span class="stamp" aria-hidden="true"><b>۸</b><span>خدمت فعال</span></span>
+      <div class="frame"><img src="assets/hero-dog.jpg" alt="سگ گلدن رتری خوشحال روی میز معاینه کلینیک دامپزشکی" width="1600" height="1200" fetchpriority="high" decoding="async" /></div>
+      <figcaption class="tab">دکتر حسینی<small>دامپزشک و جراح حیوانات خانگی</small></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ===================== TICKER ===================== -->
+<div class="ticker" aria-hidden="true">
+  <div class="track" id="track">
+    <div class="group">
+      <span><svg class="ico ico-fill"><use href="#i-steth"/></svg>چک‌آپ و واکسیناسیون</span>
+      <span><svg class="ico ico-fill"><use href="#i-chip"/></svg>کاشت میکروچیپ</span>
+      <span><svg class="ico ico-fill"><use href="#i-heart"/></svg>بخش تخصصی جراحی</span>
+      <span><svg class="ico ico-fill"><use href="#i-scalpel"/></svg>جراحی حیوانات</span>
+      <span><svg class="ico ico-fill"><use href="#i-tooth"/></svg>دندانپزشکی حیوانات</span>
+      <span><svg class="ico ico-fill"><use href="#i-scissors"/></svg>آرایشگاه سگ و گربه</span>
+      <span><svg class="ico ico-fill"><use href="#i-bag"/></svg>پت‌شاپ</span>
+      <span><svg class="ico ico-fill"><use href="#i-star"/></svg>خدمات خاص</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== STATS ===================== -->
+<section class="stats" aria-label="کلینیک در یک نگاه">
+  <div class="grid">
+    <div class="cell"><b>۱۲ سال</b><span>تجربه دکتر حسینی</span></div>
+    <div class="cell"><b>۸ خدمت</b><span>درمان، جراحی و مراقبت</span></div>
+    <div class="cell"><b>۱ پزشک</b><span>از ویزیت تا پیگیری</span></div>
+    <div class="cell"><b>۱۵ دقیقه</b><span>میانگین زمان تأیید نوبت</span></div>
+  </div>
+</section>
+<!-- ===================== SERVICES ===================== -->
+<section id="services" class="band" aria-labelledby="servicesTitle">
+  <div class="shell">
+    <div class="sechead" data-rev>
+      <div>
+        <span class="kicker"><b>۰۱</b> خدمات</span>
+        <h2 id="servicesTitle">هر کاری که حیوان خانگی‌تان لازم دارد</h2>
+      </div>
+      <p class="lede">هر هشت خدمت زیر در همان کلینیک و زیر نظر یک پزشک ثابت انجام می‌شود؛ اگر خدمتی جز این لازم داشتید، در تماس بگویید.</p>
+    </div>
+
+    <div class="cards" data-rev>
+      <article class="card">
+        <span class="num">۰۱</span>
+        <span class="ic" aria-hidden="true"><svg class="ico"><use href="#i-steth"/></svg></span>
+        <h3>چک‌آپ و واکسیناسیون</h3>
+        <p>ویزیت دوره‌ای، تنظیم برنامه واکسن بر اساس سن و نژاد، کنترل وزن، دما و علائم حیاتی.</p>
+        <span class="price"><svg class="ico" aria-hidden="true"><use href="#i-wallet"/></svg>از ۴۵۰٬۰۰۰ تومان</span>
+        <p class="meta">پرکاربردترین خدمت · نوبت‌های صبح زودتر</p>
+      </article>
+
+      <article class="card">
+        <span class="num">۰۲</span>
+        <span class="ic" aria-hidden="true"><svg class="ico"><use href="#i-chip"/></svg></span>
+        <h3>کاشت میکروچیپ</h3>
+        <p>شناسه‌گذاری دائمی با تراشه استاندارد، ثبت اطلاعات در پرونده کلینیک و راهنمای ثبت مالکیت.</p>
+        <span class="price"><svg class="ico" aria-hidden="true"><use href="#i-wallet"/></svg>از ۹۰۰٬۰۰۰ تومان</span>
+        <p class="meta">بدون درد · یک‌بار برای همیشه</p>
+      </article>
+
+      <article class="card feat">
+        <span class="num">۰۳</span>
+        <span class="ic" aria-hidden="true"><svg class="ico"><use href="#i-heart"/></svg></span>
+        <h3>بخش تخصصی جراحی</h3>
+        <p>اتاق عمل مجهز، بیهوشی کنترل‌شده، پایش علائم حیاتی حین عمل و پیگیری منظم پس از ترخیص.</p>
+        <span class="price" style="background:var(--mustard)"><svg class="ico" aria-hidden="true"><use href="#i-wallet"/></svg>استعلام پس از معاینه</span>
+        <p class="meta">ظرفیت محدود · نوبت هماهنگی لازم است</p>
+      </article>
+
+      <article class="card">
+        <span class="num">۰۴</span>
+        <span class="ic" aria-hidden="true"><svg class="ico"><use href="#i-scalpel"/></svg></span>
+        <h3>جراحی حیوانات</h3>
+        <p>عقیم‌سازی، برداشتن توده، جراحی بافت نرم، اصلاح ناهنجاری‌های مادرزادی و اسکالپ.</p>
+        <span class="price"><svg class="ico" aria-hidden="true"><use href="#i-wallet"/></svg>استعلام پس از معاینه</span>
+        <p class="meta">زیر نظر مستقیم دکتر</p>
+      </article>
+
+      <article class="card">
+        <span class="num">۰۵</span>
+        <span class="ic" aria-hidden="true"><svg class="ico"><use href="#i-tooth"/></svg></span>
+        <h3>خدمات دندانپزشکی حیوانات</h3>
+        <p>معاینه دهان، جرم‌گیری با بیهوشی سبک، ترمیم و کشیدن دندان و برنامه مراقبت خانگی.</p>
+        <span class="price"><svg class="ico" aria-hidden="true"><use href="#i-wallet"/></svg>از ۱٬۲۰۰٬۰۰۰ تومان</span>
+        <p class="meta">رایج‌ترین مشکل در حیوانات بالای ۳ سال</p>
+      </article>
+
+      <article class="card">
+        <span class="num">۰۶</span>
+        <span class="ic" aria-hidden="true"><svg class="ico"><use href="#i-scissors"/></svg></span>
+        <h3>آرایشگاه سگ و گربه</h3>
+        <p>حمام، خشک‌کردن، کوتاه‌کردن مو، کوتاه‌کردن ناخن و رسیدگی به گوش و ناخن با روش کم‌تنش.</p>
+        <span class="price"><svg class="ico" aria-hidden="true"><use href="#i-wallet"/></svg>از ۶۵۰٬۰۰۰ تومان</span>
+        <p class="meta">نوبت‌دهی آنلاین · بدون استرس</p>
+      </article>
+
+      <article class="card">
+        <span class="num">۰۷</span>
+        <span class="ic" aria-hidden="true"><svg class="ico"><use href="#i-bag"/></svg></span>
+        <h3>پت‌شاپ</h3>
+        <p>خرید غذا، مکمل، اسباب‌بازی، قلاده، باکس حمل و لوازم بهداشتی برای سگ و گربه.</p>
+        <span class="price"><svg class="ico" aria-hidden="true"><use href="#i-wallet"/></svg>مشاوره انتخاب غذا رایگان</span>
+        <p class="meta">برندهای اصل · ارسال به سراسر کشور</p>
+      </article>
+
+      <article class="card">
+        <span class="num">۰۸</span>
+        <span class="ic" aria-hidden="true"><svg class="ico"><use href="#i-star"/></svg></span>
+        <h3>خدمات خاص</h3>
+        <p>برنامه‌های مراقبت ویژه برای سالمندان، حیوانات بیمار مزمن، حیوانات داغی و پرورش‌دهندگان.</p>
+        <span class="price"><svg class="ico" aria-hidden="true"><use href="#i-wallet"/></svg>با هماهنگی قبلی</span>
+        <p class="meta">برنامه ویزیت دوره‌ای اختصاصی</p>
+      </article>
+    </div>
+
+    <p class="note">تعرفه‌ها تخفیفی و تقریبی هستند و مبلغ نهایی پس از معاینه و پیش از شروع کار به شما اعلام می‌شود.</p>
+  </div>
+</section>
+
+<!-- ===================== SURGERY FEATURE ===================== -->
+<section id="surgery" class="band band-cream" aria-labelledby="surgeryTitle">
+  <div class="shell">
+    <div class="split" data-rev>
+      <div class="frame"><img src="assets/care-room.jpg" alt="معاینه سگ در اتاق کلینیک دامپزشکی روما" width="1600" height="1200" loading="lazy" decoding="async" /></div>
+      <div>
+        <span class="kicker"><b>۰۲</b> جراحی</span>
+        <h2 id="surgeryTitle">جراحی با پیش‌بینی روشن</h2>
+        <p class="lede" style="margin-top:16px">
+          قبل از هر عمل، معاینه، آزمایش‌های لازم و برآورد هزینه انجام می‌شود و شما در جریان ریسک‌ها
+          و گزینه‌ها قرار می‌گیرید. روز عمل از ابتدا تا بیدار شدن حیوان، با شما در تماسیم.
+        </p>
+        <ul class="checklist">
+          <li><svg class="ico" aria-hidden="true"><use href="#i-badge"/></svg>اتاق عمل مجهز به پایش مداوم علائم حیاتی</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-badge"/></svg>بیهوشی متناسب با وضعیت و سن حیوان</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-badge"/></svg>دارو و مراقبت بعد از ترخیص به‌صورت مکتوب</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-badge"/></svg>پیگیری تلفنی تا بهبود کامل</li>
+        </ul>
+        <div class="actions"><a class="btn btn-primary" href="#book">هماهنگی نوبت جراحی</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===================== DOCTOR ===================== -->
+<section id="doctor" class="band" aria-labelledby="doctorTitle">
+  <div class="shell">
+    <div class="docgrid" data-rev>
+      <div>
+        <span class="kicker"><b>۰۳</b> پزشک</span>
+        <h2 id="doctorTitle">معاینه را <span class="hl">خودِ دکتر</span> انجام می‌دهد</h2>
+        <p class="lede" style="margin-top:20px">
+          در کلینیک روما، حیوان خانگی‌تان بین چند پزشک دست‌به‌دست نمی‌شود.
+          <strong>دکتر حسینی</strong> معاینه را انجام می‌دهد، تشخیص را توضیح می‌دهد و
+          جراحی را شخصاً مدیریت می‌کند.
+        </p>
+
+        <div class="biogrid">
+          <div class="fact"><b>۱۲ سال تجربه</b><span>درمان داخلی، جراحی و دندانپزشکی حیوانات خانگی</span></div>
+          <div class="fact"><b>روش کم‌تنش</b><span>عایق‌سازی موقت از محیط، بدون اجبار و با زمان کافی</span></div>
+          <div class="fact"><b>توضیح شفاف</b><span>هزینه و گزینه‌های درمان پیش از شروع کار گفته می‌شود</span></div>
+        </div>
+
+        <div class="actions">
+          <a class="btn btn-primary" href="#book">رزرو نوبت با دکتر</a>
+          <a class="btn" href="#contact">تماس با کلینیک</a>
+        </div>
+      </div>
+
+      <figure class="portrait">
+        <div class="frame"><img src="assets/doc-portrait.jpg" alt="پرتره دکتر حسینی در حال معاینه گربه" width="1200" height="1600" loading="lazy" decoding="async" /></div>
+        <figcaption class="plate"><b>دکتر حسینی</b><small>جراحی · درمان داخلی · دندانپزشکی</small></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROCESS ===================== -->
+<section id="process" class="band band-cream" aria-labelledby="processTitle">
+  <div class="shell">
+    <div class="sechead" data-rev>
+      <div>
+        <span class="kicker"><b>۰۴</b> فرایند</span>
+        <h2 id="processTitle">ویزیت شما در چهار قدم پیش می‌رود</h2>
+      </div>
+      <p class="lede">از تماس تا پیگیری بعد از درمان، بدون سردرگمی و بدون انتظار در صف.</p>
+    </div>
+    <div class="steps" data-rev>
+      <div class="step"><div class="n">۱</div><h3>تماس و نوبت</h3><p>با ما تماس می‌گیرید یا فرم رزرو را پر می‌کنید؛ نوع خدمت و وضعیت حیوان را می‌پرسیم و نزدیک‌ترین زمان آزاد را می‌دهیم.</p></div>
+      <div class="step"><div class="n">۲</div><h3>معاینه و توضیح</h3><p>دکتر معاینه می‌کند و همه گزینه‌های درمان، هزینه‌شان و نتیجه مورد انتظار را توضیح می‌دهد.</p></div>
+      <div class="step"><div class="n">۳</div><h3>درمان</h3><p>درمان با روش کم‌تنش انجام می‌شود؛ اگر به بیهوشی یا جراحی برسد، تمام مراحل را همراه شما پیش می‌بریم.</p></div>
+      <div class="step"><div class="n">۴</div><h3>پیگیری</h3><p>بعد از ترخیص تا بهبود کامل، وضعیت حیوان را پیگیری می‌کنیم و داروها و مراقبت‌ها را یادآوری می‌کنیم.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GALLERY ===================== -->
+<section id="gallery" class="band" aria-labelledby="galleryTitle">
+  <div class="shell">
+    <div class="sechead" data-rev>
+      <div>
+        <span class="kicker"><b>۰۵</b> گالری</span>
+        <h2 id="galleryTitle">محیط کلینیک را ببینید</h2>
+      </div>
+      <p class="lede">اتاق معاینه، بخش جراحی و آرایشگاه حیوانات — همان فضایی که حیوان شما در آن پذیرفته می‌شود.</p>
+    </div>
+    <div class="gal" data-rev>
+      <figure>
+        <div class="frame"><img src="assets/care-room.jpg" alt="اتاق معاینه و واکسیناسیون کلینیک روما" width="1600" height="1200" loading="lazy" decoding="async" /></div>
+        <figcaption>اتاق معاینه و واکسیناسیون</figcaption>
+      </figure>
+      <figure>
+        <div class="frame"><img src="assets/hero-dog.jpg" alt="سگ در حال معاینه روی میز کلینیک" width="1600" height="1200" loading="lazy" decoding="async" /></div>
+        <figcaption>میز معاینه و پایش علائم</figcaption>
+      </figure>
+      <figure>
+        <div class="frame"><img src="assets/hero-cat.jpg" alt="گربه در حال ویزیت در اتاق جداگانه" width="1600" height="1600" loading="lazy" decoding="async" /></div>
+        <figcaption>ویزیت گربه‌ها در اتاق جدا</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== REVIEWS ===================== -->
+<section id="reviews" class="band band-cream" aria-labelledby="reviewsTitle">
+  <div class="shell">
+    <div class="sechead" data-rev>
+      <div>
+        <span class="kicker"><b>۰۶</b> نظرات</span>
+        <h2 id="reviewsTitle">تجربه‌ی صاحبان حیوانات</h2>
+      </div>
+      <p class="lede">سه داستان کوتاه از کسانی که به کلینیک روما مراجعه کردند.</p>
+    </div>
+    <div class="quotebar" data-rev>
+      <figure class="quote">
+        <div class="stars" aria-label="امتیاز ۵ از ۵">
+          <svg class="ico" aria-hidden="true"><use href="#i-star"/></svg><svg class="ico" aria-hidden="true"><use href="#i-star"/></svg><svg class="ico" aria-hidden="true"><use href="#i-star"/></svg><svg class="ico" aria-hidden="true"><use href="#i-star"/></svg><svg class="ico" aria-hidden="true"><use href="#i-star"/></svg>
+        </div>
+        <p>برای اولین بار بود که می‌دیدم دکتر وقت بگیر و کامل توضیح بده. سگ ما موقع معاینه حتماً پشت سر دکتر پنهان می‌شد.</p>
+        <footer>سارا م.<span>صاحب سگ ژرمن · مراجعه برای واکسیناسیون</span></footer>
+      </figure>
+      <figure class="quote">
+        <div class="stars" aria-label="امتیاز ۵ از ۵">
+          <svg class="ico" aria-hidden="true"><use href="#i-star"/></svg><svg class="ico" aria-hidden="true"><use href="#i-star"/></svg><svg class="ico" aria-hidden="true"><use href="#i-star"/></svg><svg class="ico" aria-hidden="true"><use href="#i-star"/></svg><svg class="ico" aria-hidden="true"><use href="#i-star"/></svg>
+        </div>
+        <p>بعد از جراحی هر روز زنگ می‌زدند و وضعیت را می‌پرسیدند. این پیگیری برای ما ارزش زیادی داشت.</p>
+        <footer>امیر ک.<span>صاحب گربه · مراجعه برای جراحی</span></footer>
+      </figure>
+      <figure class="quote">
+        <div class="stars" aria-label="امتیاز ۵ از ۵">
+          <svg class="ico" aria-hidden="true"><use href="#i-star"/></svg><svg class="ico" aria-hidden="true"><use href="#i-star"/></svg><svg class="ico" aria-hidden="true"><use href="#i-star"/></svg><svg class="ico" aria-hidden="true"><use href="#i-star"/></svg><svg class="ico" aria-hidden="true"><use href="#i-star"/></svg>
+        </div>
+        <p>برای حمام و آرایش بردم و انتظار نداشتم این‌قدر با حوصله با حیوان برخورد کنند. حالا هر ماه می‌بریمش.</p>
+        <footer>نگین ر.<span>صاحب سگ پودول · مراجعه به آرایشگاه</span></footer>
+      </figure>
+    </div>
+  </div>
+</section>
+<!-- ===================== BOOKING ===================== -->
+<section id="book" class="band band-cream" aria-labelledby="bookTitle">
+  <div class="bookwrap">
+    <div class="formcard" data-rev>
+      <span class="eyebrow"><svg class="ico" aria-hidden="true"><use href="#i-cal"/></svg>نوبت‌دهی سریع</span>
+      <h2 id="bookTitle">همین حالا نوبت بگیرید</h2>
+      <p class="lede" style="margin-top:12px;font-size:15px">فرم را پر کنید؛ تماس ما کمتر از ۱۵ دقیقه کاری نوبت را تأیید می‌کند.</p>
+
+      <form id="bookForm" novalidate>
+        <div class="frow">
+          <div class="fcell wide">
+            <span class="lbl" id="svcLbl">نوع خدمت</span>
+            <div class="chipset" role="radiogroup" aria-labelledby="svcLbl">
+              <input type="radio" name="svc" id="s1" value="چک‌آپ و واکسیناسیون" checked><label for="s1">چک‌آپ</label>
+              <input type="radio" name="svc" id="s2" value="کاشت میکروچیپ"><label for="s2">میکروچیپ</label>
+              <input type="radio" name="svc" id="s3" value="جراحی حیوانات"><label for="s3">جراحی</label>
+              <input type="radio" name="svc" id="s4" value="خدمات دندانپزشکی حیوانات"><label for="s4">دندانپزشکی</label>
+              <input type="radio" name="svc" id="s5" value="آرایشگاه سگ و گربه"><label for="s5">آرایشگاه</label>
+              <input type="radio" name="svc" id="s6" value="خدمات خاص"><label for="s6">خدمات خاص</label>
+            </div>
+            <span class="err">یک خدمت را انتخاب کنید.</span>
+          </div>
+
+          <div class="fcell">
+            <label class="lbl" for="pet">نام حیوان</label>
+            <input class="inp" type="text" id="pet" name="pet" placeholder="مثلاً روما" autocomplete="off" required>
+            <span class="err">نام حیوان را بنویسید.</span>
+          </div>
+
+          <div class="fcell">
+            <label class="lbl" for="owner">نام شما</label>
+            <input class="inp" type="text" id="owner" name="owner" placeholder="مثلاً مریم رضایی" autocomplete="name" required>
+            <span class="err">نام خود را بنویسید.</span>
+          </div>
+
+          <div class="fcell">
+            <label class="lbl" for="phone">شماره تماس</label>
+            <input class="inp" type="tel" id="phone" name="phone" placeholder="۰۹۱۲۳۴۵۶۷۸۹" inputmode="tel" autocomplete="tel" required>
+            <span class="err">شماره تماس معتبر وارد کنید (حداقل ۱۰ رقم).</span>
+          </div>
+
+          <div class="fcell">
+            <label class="lbl" for="slot">روز و ساعت</label>
+            <select class="inp" id="slot" name="slot" required>
+              <option value="">انتخاب کنید</option>
+              <option>امروز · ۱۷:۳۰</option>
+              <option>فردا · ۱۰:۰۰</option>
+              <option>فردا · ۱۸:۰۰</option>
+              <option>پس‌فردا · ۱۱:۳۰</option>
+              <option>هر روز · اولین نوبت صبح</option>
+            </select>
+            <span class="err">یک زمان انتخاب کنید.</span>
+          </div>
+
+          <div class="fcell wide">
+            <label class="lbl" for="note">توضیح کوتاه (اختیاری)</label>
+            <textarea class="inp" id="note" name="note" placeholder="مثلاً سه ساله است و از واکسن سال قبلش شش ماه گذشته."></textarea>
+          </div>
+        </div>
+
+        <div class="formfoot">
+          <button class="btn btn-primary btn-lg" type="submit">
+            <svg class="ico" aria-hidden="true"><use href="#i-cal"/></svg>
+            ثبت درخواست نوبت
+          </button>
+          <small>اطلاعات شما فقط برای هماهنگی نوبت استفاده می‌شود.</small>
+        </div>
+      </form>
+
+      <div class="done" id="bookDone" role="status" aria-live="polite">
+        <div class="ok" aria-hidden="true"><svg class="ico"><use href="#i-badge"/></svg></div>
+        <h3>درخواست شما ثبت شد</h3>
+        <p>کارشناسان کلینیک در کمتر از ۱۵ دقیقه کاری تماس می‌گیرند تا نوبت را نهایی کنند.</p>
+        <div class="recap" id="recap"></div>
+        <div class="actions" style="justify-content:center">
+          <button class="btn btn-sm" type="button" id="bookAgain">ثبت نوبت دیگر</button>
+        </div>
+      </div>
+
+      <p style="font-size:12.5px;color:var(--ink-2);margin-top:14px">ویزیت‌های اورژانسی بدون نوبت هم پذیرفته می‌شود.</p>
+    </div>
+
+    <div class="stackcol">
+      <div class="docline" data-rev>
+        <div class="frame"><img src="assets/doc-portrait.jpg" alt="پرتره دکتر حسینی" width="1200" height="1600" loading="lazy" decoding="async" /></div>
+        <div>
+          <b>دکتر حسینی</b>
+          <p>دامپزشک کلینیک روما با تجربه در جراحی، درمان داخلی و دندانپزشکی حیوانات خانگی. معاینه، تشخیص و تصمیم‌گیری درمان مستقیماً توسط خودِ دکتر انجام می‌شود.</p>
+          <span class="ok">پذیرش بیمارستانی هم داریم</span>
+        </div>
+      </div>
+
+      <div class="chips" data-rev>
+        <a class="tile" href="#services"><span class="ic" aria-hidden="true"><svg class="ico"><use href="#i-steth"/></svg></span>چک‌آپ و واکسیناسیون</a>
+        <a class="tile" href="#services"><span class="ic" aria-hidden="true"><svg class="ico"><use href="#i-chip"/></svg></span>میکروچیپ</a>
+        <a class="tile" href="#surgery"><span class="ic" aria-hidden="true"><svg class="ico"><use href="#i-scalpel"/></svg></span>جراحی</a>
+        <a class="tile" href="#services"><span class="ic" aria-hidden="true"><svg class="ico"><use href="#i-tooth"/></svg></span>دندانپزشکی</a>
+        <a class="tile" href="#services"><span class="ic" aria-hidden="true"><svg class="ico"><use href="#i-scissors"/></svg></span>آرایشگاه</a>
+        <a class="tile" href="#services"><span class="ic" aria-hidden="true"><svg class="ico"><use href="#i-bag"/></svg></span>پت‌شاپ</a>
+        <a class="tile" href="#services"><span class="ic" aria-hidden="true"><svg class="ico"><use href="#i-star"/></svg></span>خدمات خاص</a>
+        <a class="tile on" href="#surgery"><span class="ic" aria-hidden="true"><svg class="ico"><use href="#i-heart"/></svg></span>بخش تخصصی جراحی</a>
+      </div>
+
+      <div class="sos" data-rev>
+        <div>
+          <b>اورژانس شبانه‌روزی</b>
+          <p>برای شرایط اورژانسی حیوان خانگی، مستقیم تماس بگیرید.</p>
+        </div>
+        <a class="btn" href="tel:+989124475837">
+          <svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>
+          تماس اورژانس
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===================== CONTACT / HOURS / FAQ ===================== -->
+<section id="contact" class="band" aria-labelledby="contactTitle">
+  <div class="shell">
+    <div class="sechead" data-rev>
+      <div>
+        <span class="kicker"><b>۰۷</b> تماس</span>
+        <h2 id="contactTitle">ساعات کاری، نشانی و تماس</h2>
+      </div>
+      <p class="lede">برای ویزیت‌های غیرفوری از فرم رزرو و برای شرایط فوری از خط اورژانس استفاده کنید.</p>
+    </div>
+
+    <div class="hours" data-rev>
+      <div class="hrs">
+        <h3><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg>ساعات کاری</h3>
+        <dl>
+          <div><dt>شنبه تا چهارشنبه</dt><dd>۹ تا ۲۱</dd></div>
+          <div><dt>پنجشنبه</dt><dd>۹ تا ۱۴</dd></div>
+          <div><dt>جمعه</dt><dd class="off">تعطیل</dd></div>
+        </dl>
+        <p class="hint">اورژانس شبانه‌روزی، حتی در روزهای تعطیل.</p>
+      </div>
+
+      <div class="hrs">
+        <h3><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>نشانی کلینیک</h3>
+        <p>نیاوران، کاشانک<br>خیابان پورابتهاج، بن بست طائی<br>پلاک ۶، طبقه اول</p>
+        <div class="map">
+          <svg class="ico" aria-hidden="true"><use href="#i-car"/></svg>
+          <b>دسترسی با تاکسی</b>
+          <p>کلینیک در طبقه اول واقع شده و پارکینگ محدود است؛ پیشنهاد می‌کنیم با تاکسی تا ابتدای بن بست طائی بیایید.</p>
+        </div>
+      </div>
+
+      <div class="hrs">
+        <h3><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>تلفن، موبایل و ایمیل</h3>
+        <dl class="tels">
+          <div><dt>تلفن کلینیک</dt><dd><a href="tel:+982126248772">۰۲۱ — ۲۶۲۴۸۷۷۲</a></dd></div>
+          <div><dt>موبایل نوبت‌دهی</dt><dd><a href="tel:+989124475837">۰۹۱۲ — ۴۴۷۵۸۳۷</a></dd></div>
+        </dl>
+        <p class="hint">پاسخگویی و نوبت‌دهی همه روزه از ساعت ۸ صبح.</p>
+        <div class="actions" style="margin-top:14px">
+          <a class="btn btn-sm" href="https://instagram.com/roma_pet_clinic" target="_blank" rel="noopener noreferrer">
+            <svg class="ico" aria-hidden="true"><use href="#i-insta"/></svg>
+            اینستاگرام
+          </a>
+          <a class="btn btn-sm" href="mailto:info@roma-vet.ir">
+            <svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>
+            info@roma-vet.ir
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section id="faq" class="band band-cream" aria-labelledby="faqTitle">
+  <div class="shell">
+    <div class="sechead" data-rev>
+      <div>
+        <span class="kicker"><b>۰۸</b> سؤالات</span>
+        <h2 id="faqTitle">پرسش‌های پرتکرار</h2>
+      </div>
+      <p class="lede">پاسخ چند سؤالی که معمولاً پیش از اولین ویزیت پرسیده می‌شود.</p>
+    </div>
+    <div class="faq" data-rev>
+      <details>
+        <summary>آیا برای اولین ویزیت نوبت لازم است؟</summary>
+        <p>خیر. ویزیت‌های بدون نوبت هم پذیرفته می‌شود، اما برای ویزیت‌های غیرفوری و به‌ویژه خدمات جراحی، گرفتن نوبت سریع‌تر و کم‌استرس‌تر است.</p>
+      </details>
+      <details>
+        <summary>هزینه هر خدمت چقدر است؟</summary>
+        <p>تعرفه‌های پایه در بخش خدمات آمده، اما مبلغ نهایی پس از معاینه و بر اساس وضعیت واقعی حیوان اعلام می‌شود. اگر درمان پیچیده‌تر از حد معمول باشد، قبل از هزینه‌های اضافه با شما هماهنگ می‌کنیم.</p>
+      </details>
+      <details>
+        <summary>حیوانم از محیط کلینیک می‌ترسد چه کنم؟</summary>
+        <p>کافی است از قبل اطلاع دهید. ما با روش کم‌تنش معاینه می‌کنیم، از وسایل آرام‌بخش استفاده می‌کنیم و اجازه می‌دهیم تا زمان آمادگی، حیوان پشت میز یا داخل باکس بماند.</p>
+      </details>
+      <details>
+        <summary>بعد از جراحی چه کارهایی باید انجام دهم؟</summary>
+        <p>داروها، محدودیت فعالیت و زمان ویزیت کنترل به‌صورت مکتوب تحویل داده می‌شود و تا بهبود کامل، پیگیری تلفنی انجام می‌دهیم.</p>
+      </details>
+      <details>
+        <summary>آیا پت‌شاپ هم دارید؟</summary>
+        <p>بله. غذا، مکمل، اسباب‌بازی، قلاده، باکس حمل و لوازم بهداشتی سگ و گربه موجود است و برای انتخاب غذای مناسب هم مشاوره رایگان می‌دهیم.</p>
+      </details>
+    </div>
+
+    <div style="margin-top:clamp(40px,5vw,64px)" data-rev>
+      <div class="ctacard">
+        <h2>هنوز مطمئن نیستید کدام خدمت لازم است؟</h2>
+        <p>شماره‌تان را بگذارید یا فرم را پر کنید؛ دکتر وضعیت حیوان را می‌پرسد و خدمت درست را پیشنهاد می‌دهد.</p>
+        <div class="actions">
+          <a class="btn btn-mustard btn-lg" href="#book">رزرو نوبت</a>
+          <a class="btn btn-lg" style="background:var(--cream);color:var(--ink)" href="tel:+982126248772">
+            <svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>
+            تماس با کلینیک
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="foot">
+  <div class="shell">
+    <div class="cols">
+      <div>
+        <h4>کلینیک دامپزشکی روما</h4>
+        <div class="addr">
+          <svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>
+          <span><b>نیاوران، کاشانک</b><small>خیابان پورابتهاج، بن بست طائی، پلاک ۶، طبقه اول</small></span>
+        </div>
+        <a href="tel:+982126248772">۰۲۱ — ۲۶۲۴۸۷۷۲</a>
+        <a href="tel:+989124475837">۰۹۱۲ — ۴۴۷۵۸۳۷</a>
+        <div class="social">
+          <a href="https://instagram.com/roma_pet_clinic" aria-label="اینستاگرام کلینیک" target="_blank" rel="noopener noreferrer"><svg class="ico" aria-hidden="true"><use href="#i-insta"/></svg></a>
+          <a href="#" aria-label="تلگرام"><svg class="ico" aria-hidden="true"><use href="#i-tele"/></svg></a>
+          <a href="mailto:info@roma-vet.ir" aria-label="ایمیل"><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg></a>
+          <a href="tel:+982126248772" aria-label="تماس با تلفن کلینیک"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg></a>
+          <a href="tel:+989124475837" aria-label="تماس با موبایل نوبت‌دهی"><svg class="ico" aria-hidden="true"><use href="#i-mobile"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>خدمات درمانی</h4>
+        <a href="#services">چک‌آپ و واکسیناسیون</a>
+        <a href="#services">کاشت میکروچیپ</a>
+        <a href="#surgery">جراحی حیوانات</a>
+        <a href="#services">دندانپزشکی حیوانات</a>
+        <a href="#services">آرایشگاه سگ و گربه</a>
+      </div>
+      <div>
+        <h4>خدمات دیگر</h4>
+        <a href="#services">پت‌شاپ</a>
+        <a href="#services">خدمات خاص</a>
+        <a href="#doctor">درباره دکتر حسینی</a>
+        <a href="#gallery">گالری کلینیک</a>
+        <a href="#faq">سؤالات پرتکرار</a>
+      </div>
+      <div>
+        <h4>ساعات کاری</h4>
+        <p>شنبه تا چهارشنبه: ۹ تا ۲۱<br>پنجشنبه: ۹ تا ۱۴<br>جمعه: تعطیل</p>
+        <p style="margin-top:12px">اورژانس: شبانه‌روزی</p>
+      </div>
+    </div>
+  </div>
+  <div class="bar">
+    <span>© کلینیک دامپزشکی روما — تمام حقوق محفوظ است</span>
+    <span>ساخته‌شده با دقت، برای حیوانان خانگی</span>
+  </div>
+</footer>
+
+<div class="mobbar" id="mobbar">
+  <a class="btn btn-ink" href="tel:+982126248772">
+    <svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>
+    تماس کلینیک
+  </a>
+  <a class="btn btn-primary" href="#book">
+    <svg class="ico" aria-hidden="true"><use href="#i-cal"/></svg>
+    رزرو نوبت
+  </a>
+</div>
+
+<button class="totop" id="totop" aria-label="بازگشت به بالا">
+  <svg class="ico" aria-hidden="true"><use href="#i-up"/></svg>
+</button>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ---------- mobile menu ---------- */
+  var body = document.body, burger = document.getElementById('burger'),
+      scrim = document.getElementById('scrim'), menu = document.getElementById('menu'),
+      burgerIcon = document.getElementById('burgerIcon'),
+      drawerClose = document.getElementById('drawerClose');
+
+  function setMenu(open) {
+    body.classList.toggle('lock', open);
+    burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? 'بستن منو' : 'باز کردن منو');
+    burgerIcon.querySelector('use').setAttribute('href', open ? '#i-x' : '#i-menu');
+  }
+  burger.addEventListener('click', function () {
+    setMenu(!body.classList.contains('lock'));
+  });
+  drawerClose.addEventListener('click', function () {
+    setMenu(false);
+    burger.focus();
+  });
+  scrim.addEventListener('click', function () { setMenu(false); });
+  menu.addEventListener('click', function (e) {
+    if (e.target.closest('a')) setMenu(false);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && body.classList.contains('lock')) {
+      setMenu(false); burger.focus();
+    }
+  });
+
+  /* keep --navh in sync so the drawer and scrim start exactly under the header */
+  var navEl = document.getElementById('nav');
+  function syncNavH() {
+    document.documentElement.style.setProperty('--navh', navEl.offsetHeight + 'px');
+  }
+  syncNavH();
+
+  /* ---------- ticker: duplicate group for seamless loop ---------- */
+  var track = document.getElementById('track');
+  track.innerHTML += track.innerHTML;
+
+  /* ---------- hide action bar while the booking form is on screen ----------
+     Geometric check rather than IntersectionObserver: the booking section is
+     much taller than a phone viewport, so a ratio threshold can never be
+     reached on short/landscape screens and the observer stops notifying. */
+  var mobbar = document.getElementById('mobbar'), bookSec = document.getElementById('book');
+  function syncBar() {
+    if (!mobbar || !bookSec) return;
+    var r = bookSec.getBoundingClientRect(), vh = window.innerHeight;
+    mobbar.classList.toggle('hide', r.top < vh * 0.55 && r.bottom > vh * 0.3);
+  }
+
+  /* ---------- sticky nav + back to top ---------- */
+  var nav = navEl, totop = document.getElementById('totop');
+  function onScroll() {
+    var y = window.scrollY;
+    nav.classList.toggle('stuck', y > 8);
+    totop.classList.toggle('show', y > 700);
+    syncBar();
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', function () { syncNavH(); onScroll(); });
+  onScroll();
+  totop.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  /* ---------- reveal on scroll ---------- */
+  var revs = document.querySelectorAll('[data-rev]');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
+    revs.forEach(function (el) { io.observe(el); });
+  } else {
+    revs.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* ---------- scrollspy ---------- */
+  var links = [].slice.call(document.querySelectorAll('.nav-links a'));
+  var secs = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+  function spy() {
+    var best = 0;
+    secs.forEach(function (s, i) { if (s && s.getBoundingClientRect().top <= 140) best = i; });
+    links.forEach(function (a, i) { a.classList.toggle('active', i === best); });
+  }
+  window.addEventListener('scroll', spy, { passive: true });
+  window.addEventListener('resize', spy);
+  spy();
+
+  /* ---------- booking form ---------- */
+  var form = document.getElementById('bookForm'),
+      done = document.getElementById('bookDone'),
+      recap = document.getElementById('recap'),
+      again = document.getElementById('bookAgain');
+
+  function cellOf(el) { return el.closest('.fcell'); }
+
+  function validate() {
+    var ok = true;
+    form.querySelectorAll('.fcell').forEach(function (c) { c.classList.remove('bad'); });
+
+    var pet = form.pet, owner = form.owner, phone = form.phone, slot = form.slot;
+    if (!pet.value.trim()) { cellOf(pet).classList.add('bad'); ok = false; }
+    if (!owner.value.trim()) { cellOf(owner).classList.add('bad'); ok = false; }
+    var digits = phone.value.replace(/[^\d۰-۹]/g, '');
+    digits = digits.replace(/[۰-۹]/g, function (d) { return String(d.charCodeAt(0) - 1776); });
+    if (digits.length < 10) { cellOf(phone).classList.add('bad'); ok = false; }
+    if (!slot.value) { cellOf(slot).classList.add('bad'); ok = false; }
+    return ok;
+  }
+
+  form.addEventListener('input', function (e) {
+    var c = cellOf(e.target);
+    if (c && c.classList.contains('bad')) c.classList.remove('bad');
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!validate()) {
+      var first = form.querySelector('.fcell.bad .inp') || form.querySelector('.fcell.bad');
+      if (first) { first.scrollIntoView({ block: 'center', behavior: 'smooth' }); first.focus({ preventScroll: true }); }
+      return;
+    }
+    var data = new FormData(form);
+    var rows = [
+      ['خدمت', data.get('svc')],
+      ['حیوان', data.get('pet')],
+      ['شما', data.get('owner')],
+      ['تماس', data.get('phone')],
+      ['زمان', data.get('slot')]
+    ];
+    if (data.get('note')) rows.push(['توضیح', data.get('note')]);
+    recap.innerHTML = rows.map(function (r) {
+      return '<div><span>' + r[0] + '</span><b>' + String(r[1]).replace(/</g, '&lt;') + '</b></div>';
+    }).join('');
+
+    form.style.display = 'none';
+    done.classList.add('show');
+    done.scrollIntoView({ block: 'center', behavior: 'smooth' });
+  });
+
+  again.addEventListener('click', function () {
+    form.reset();
+    form.style.display = '';
+    done.classList.remove('show');
+    form.pet.focus();
+  });
+})();
+</script>
+</body>
+</html>

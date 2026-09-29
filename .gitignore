@@ -1,0 +1,19 @@
+# Dependencies / secrets
+node_modules/
+.env
+.env.local
+
+# Vercel
+.vercel
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Unused asset (465KB, not referenced by index.html)
+assets/paw-pattern.jpg
+
+# Editor
+.vscode/
+.idea/
+*.swp
